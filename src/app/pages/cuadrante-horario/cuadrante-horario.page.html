@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>HORARIO: {{horarioFinal.estudio}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-grid class="ion-text-center">
+        <ion-row>
+           
+         
+                    <ion-col size="2" class="celda1" > CURSO {{horarioFinal.grupo}}</ion-col>
+                    <ion-col size="2" class="celda2" *ngFor="let dia of arrayDias"><h4 class="nombreDias">{{dia|dias}}</h4></ion-col>
+               
+        </ion-row>
+     
+        <ion-row>
+            <ion-col size="2" class="celda2" >
+                <ion-row *ngFor="let hora of arrayHoras">
+                    <h4 class="nombreDias2">{{hora|horas}}</h4>
+                </ion-row>
+            </ion-col>  
+            
+
+ 
+             <ion-col  size="10">
+                <ion-row size="2" expand="full" *ngFor="let row of horarioFinal.materiasTotales">
+                    <ion-col size="2" expand="full" class="celda1"  *ngFor="let col of row" >
+                        <h4 size="2" *ngFor="let materiaEspecifica of col.materias" class="nombreDias" > 
+                            <h4 size="2" *ngFor="let e of materiaEspecifica" class="nombreDias" (click)="nombreToast(materiaEspecifica)"> 
+                                {{e.nombre}}
+                            </h4>
+                        </h4>
+                    </ion-col>
+                </ion-row>
+            </ion-col> 
+       
+        </ion-row> 
+    </ion-grid>
+
+  
+</ion-content>

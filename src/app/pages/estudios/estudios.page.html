@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ESTUDIOS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div *ngFor="let item of estudios" >
+  <ion-card expand="full" class="styleCardUno" (click)="enviarEstudio(item.nombre)"  >
+    <ion-card-header>
+      <ion-card-subtitle>{{item.nombre}}</ion-card-subtitle>
+   
+    </ion-card-header>
+  
+ 
+  </ion-card>
+</div>
+</ion-content>
+

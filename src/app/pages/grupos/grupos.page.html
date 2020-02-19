@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>GRUPOS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div *ngFor="let item of grupos" >
+    <ion-card  expand="full" class="styleCardDos" (click)="enviarGrupoEstudio(item.nombre)"  >
+      <ion-card-header>
+        <ion-card-subtitle>{{item.nombre}}</ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
+  </div>
+  
+  
+</ion-content>
